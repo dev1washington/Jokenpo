@@ -1,0 +1,86 @@
+//EXIBIR OPÇÕES NA TELA
+// RODANDO
+//JOKENPO RODANDO
+const prompt = require('prompt-sync')()
+console.clear();
+
+let opcoesArray = ["pedra", "papel", "tesoura"];
+
+
+let jogadas;
+let empates;
+let winsUser;
+let winsComputer;
+
+let cont;
+
+
+
+let qtd = +prompt ('Digite a quantidade de rodadas');
+while (true) {
+     empates = 0
+     winsUser =0
+     winsComputer =0
+     
+
+    for (let i =0; i< qtd; i++){
+        
+
+        //let escolhaUser = +prompt("Digite sua escolha: ");
+        //let escolhaComputador = Math.round(Math.random() * 2);
+        
+        
+
+        console.log(`selecione:
+        0. pedra
+        1. papel
+        2. tesoura`);
+
+        let jogadas = +prompt();
+
+
+        if (jogadas == 0) {
+            (jogadas = "pedra");
+            (jogadas = opcoesArray[0]);
+        }
+        else if (jogadas == 1) {
+            (jogadas = "papel");
+            (jogadas = opcoesArray[1]);
+        }
+
+        else if (jogadas == 2) {
+            (jogadas = "tesoura");
+            (jogadas = opcoesArray[2]);
+        }
+
+        console.log (jogadas);
+        if (winsUser>winsComputer){
+            winsUser++
+        
+        } else if (winsComputer< winsUser) {
+            winsComputer++
+
+        } else {
+            empates++
+        }
+
+    }
+    if (winsUser > winsComputer) { 
+        console.clear ();
+        console.log ('Você Venceu!')
+
+    } else if (winsComputer > winsUser){
+        console.clear ();
+        console.log ('Você Venceu!')
+    }   else {
+        console.clear ();
+        console.log('Empate')
+    }
+    
+cont = prompt ('Deseja continuar s/n  ').toLowerCase();
+if (cont == 'n')        {
+    break
+}
+
+}
+console.log ();
